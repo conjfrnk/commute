@@ -1,0 +1,25 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      # The tests fake Playwright and never open a browser, so no dependencies are installed.
+      - run: python -m unittest discover -v
+
+  swift:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: swift build -c release

@@ -1,0 +1,3 @@
+# Sampler (headless Chromium via Playwright).
+# After installing: venv/bin/playwright install chromium
+playwright==1.63.0

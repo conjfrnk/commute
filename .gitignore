@@ -1,0 +1,41 @@
+# Build output
+.build/
+build/
+.swiftpm/
+*.xcodeproj/xcuserdata/
+DerivedData/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Sampler runtime state
+commute_sampler.log
+commute_sampler.log.1
+.commute-sampler.lock
+.commute-refresh
+.commute-model.lock
+
+# Learned model state (rebuilt from the CSVs at any time)
+commute_model*.json
+commute_model*.json.prev
+.model_state.*.tmp
+
+# Personal data: sampled history and user settings (home/work addresses)
+commute_live*.csv
+commute_settings.json
+
+# Secrets and local env
+.env
+.env.*
+
+# macOS / editors
+.DS_Store
+.idea/
+.vscode/
